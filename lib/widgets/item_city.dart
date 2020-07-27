@@ -15,8 +15,22 @@ class ItemCity extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Text(name),
-        Text(description),
+        Text(
+          name,
+          textAlign: TextAlign.right,
+          style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          height: 5.0,
+        ),
+        Text(
+          description,
+          textAlign: TextAlign.left,
+          style: TextStyle(
+            fontSize: 20.0,
+            color: Colors.grey,
+          ),
+        ),
       ],
     );
   }
