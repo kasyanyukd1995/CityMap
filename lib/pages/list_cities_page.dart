@@ -2,6 +2,7 @@ import 'package:CityMap/models/city_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:CityMap/widgets/item_city.dart';
 import 'package:flutter/material.dart';
+import 'city_info_page.dart';
 
 class CityList extends StatelessWidget {
   final List<CityModel> listCity = [
@@ -88,26 +89,34 @@ class CityList extends StatelessWidget {
   ];
 
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Cities"),
-      ),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          final itemModel = listCity[index];
-          return ItemCity(
-            name: itemModel.name,
-            description: itemModel.description,
-          );
-        },
-        itemCount: listCity.length,
-      ),
-      backgroundColor: Colors.white,
-      drawer: Column(
-        children: <Widget>[
-          Text("safsf"),
-          Text("dfd"),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Cities"),
+        ),
+        body: ListView.builder(
+          itemBuilder: (context, index) {
+            final itemModel = listCity[index];
+            return ItemCity(
+              name: itemModel.name,
+              description: itemModel.description,
+              onTapCityFunction: (cityobj) => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => CityInfoPage(
+                            cityModel: itemModel,
+                          ))),
+            );
+          },
+          itemCount: listCity.length,
+        ),
+        backgroundColor: Colors.white,
+        drawer: Column(
+          children: <Widget>[
+            Text("safsf"),
+            Text("dfd"),
+          ],
+        ),
       ),
     );
   }
