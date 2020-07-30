@@ -90,9 +90,7 @@ class CityList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Cities",
-        ),
+        title: Text("Cities"),
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {
