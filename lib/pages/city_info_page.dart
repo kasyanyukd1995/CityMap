@@ -2,7 +2,6 @@ import 'package:CityMap/models/city_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'list_cities_page.dart';
 
 class CityInfoPage extends StatelessWidget {
   final CityModel cityModel;
@@ -15,7 +14,6 @@ class CityInfoPage extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             cityModel.name,
-            textAlign: TextAlign.center,
           ),
         ),
         body: Align(
@@ -39,6 +37,7 @@ class CityInfoPage extends StatelessWidget {
                     color: Colors.blueGrey,
                   ),
                 ),
+                Image.network(cityModel.urlImage),
               ],
             ),
           ),
@@ -46,8 +45,8 @@ class CityInfoPage extends StatelessWidget {
         backgroundColor: Colors.white,
         drawer: Column(
           children: <Widget>[
-            Text("safsf"),
-            Text("dfd"),
+            Text('safsf'),
+            Text('dfd'),
           ],
         ),
       ),

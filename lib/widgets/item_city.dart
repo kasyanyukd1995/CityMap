@@ -6,6 +6,7 @@ class ItemCity extends StatelessWidget {
   final int id;
   final String name;
   final String description;
+  final String urlImage;
   final Function(CityModel cityobj) onTapCityFunction;
   final CityModel cityobj;
 
@@ -13,6 +14,7 @@ class ItemCity extends StatelessWidget {
     this.id,
     this.name,
     this.description,
+    this.urlImage,
     this.onTapCityFunction,
     this.cityobj,
   });
@@ -24,7 +26,7 @@ class ItemCity extends StatelessWidget {
         alignment: Alignment.topLeft,
         child: InkWell(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
                 name.toUpperCase(),
@@ -36,13 +38,14 @@ class ItemCity extends StatelessWidget {
                   //fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
+              /* Text(
                 description,
                 style: TextStyle(
                   fontSize: 15.0,
                   color: Colors.blueGrey,
                 ),
-              ),
+              ),*/
+              Image.network(urlImage),
             ],
           ),
           onTap: () => onTapCityFunction(cityobj),
